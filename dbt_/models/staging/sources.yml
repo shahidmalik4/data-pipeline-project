@@ -4,7 +4,11 @@ sources:
   - name: raw
     schema: raw
     tables:
-      - name: customers
-      - name: products
+      - name: customer
+      - name: lineitem
+      - name: nation
       - name: orders
-      - name: order_details
+      - name: part
+      - name: partsupp
+      - name: region
+      - name: supplier

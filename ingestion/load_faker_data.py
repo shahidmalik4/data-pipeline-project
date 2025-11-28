@@ -8,12 +8,13 @@ fake = Faker()
 # Connect to Postgres
 # -----------------------------
 conn = psycopg2.connect(
-    dbname="warehouse",
-    user="admin",
-    password="admin",
-    host="localhost",
-    port="5434"
+    f"dbname={os.getenv('POSTGRES_DB')} "
+    f"user={os.getenv('POSTGRES_USER')} "
+    f"password={os.getenv('POSTGRES_PASSWORD')} "
+    f"host=localhost "
+    f"port={os.getenv('POSTGRES_PORT')}"
 )
+
 cur = conn.cursor()
 
 # -----------------------------
