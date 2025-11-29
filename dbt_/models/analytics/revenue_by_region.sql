@@ -3,6 +3,7 @@
 with orders as (
     select
         o.order_id,
+        o.customer_id,
         o.order_date::date as order_date,
         o.total_price
     from {{ ref('stg_orders') }} o
@@ -26,6 +27,6 @@ select
     count(distinct o.order_id) as orders_count,
     sum(o.total_price) as revenue
 from orders o
-join customers on customers.customer_id = (select customer_id from {{ ref('stg_orders') }} where order_id = o.order_id limit 1)
+join customers on customers.customer_id = o.customer_id
 group by 1,2,3
 order by 1 desc, 4 desc
