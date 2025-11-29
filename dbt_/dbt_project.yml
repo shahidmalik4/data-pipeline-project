@@ -40,5 +40,5 @@ models:
     # Analytics layer
     # --------------------------
     analytics:
-      +materialized: view
+      +materialized: table
       +schema: analytics
