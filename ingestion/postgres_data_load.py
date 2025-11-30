@@ -12,8 +12,9 @@ DB_DSN = (
     f"host=localhost "
     f"port={os.getenv('POSTGRES_PORT')}"
 )
+
 SCHEMA = "raw"
-BASE_DIR = "/media/cipherray/02c39ea1-88a8-4d51-b7a6-b20215b1d9641/Workspace/TPCH_DS"
+BASE_DIR = {os.getenv('BASE_DIR')}
 DELIMITER = "|"          
 TRUNCATE_BEFORE_LOAD = True
 # -------------------------------------
